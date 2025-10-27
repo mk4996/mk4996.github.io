@@ -1,5 +1,5 @@
 ---
-title: "About this website"
+title: "About Me"
 output: 
   html_document:
     toc: true
@@ -7,8 +7,24 @@ output:
     theme: cerulean
 ---
 
-This website was coded Miho Kawanamiusing markdown to do all this homework.
+## Education
+
+- Master of Public Health (Epidemiology), Columbia University 
+
+- BS / MS in Nursing, St. Luke's International University, Tokyo, Japan
+
+
+## Interests
+
+- Mental health prevention and early intervention
+
+- Workplace stress, burnout, and resilience
+
+- Spatial epidemiology and environmental context of mental health
+
+
+## Contact
+Email: mihok1168@gmail.com  
+GitHub: https://github.com/mk4996/mk4996.github.io
 
 Go back to the [homepage](index.html)
-
-
