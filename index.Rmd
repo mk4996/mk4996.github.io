@@ -6,14 +6,22 @@ output:
     toc_float: true
     theme: cerulean
 ---
+# Welcome
 
-# This is Jeff's awesome website
+Hi, I'm **Miho Kawanami**.
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
-This website is an example coming from [P8105](https://p8105.com/index.html).
-We're makin website today! Learn more about this [site](about.html)
+I'm currently an MPH student in Epidemiology at Columbia University.
+My interests include:
 
-I also use [google](https://www.google.com/) a ton for data science.
+- mental health prevention
+
+- Psychiatric Epidemiology
+
+- health disparity and mental health
+
+You can find more about me on the [About](about.html) page.
+
+
 
 
 
