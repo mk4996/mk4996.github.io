@@ -1,0 +1,19 @@
+---
+title: "HW4_mk4996"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Jeff's awesome website
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+This website is an example coming from [P8105](https://p8105.com/index.html).
+We're makin website today! Learn more about this [site](about.html)
+
+I also use [google](https://www.google.com/) a ton for data science.
+
+
+

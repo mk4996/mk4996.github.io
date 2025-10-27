@@ -1,0 +1,14 @@
+---
+title: "About this website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+This website was coded Miho Kawanamiusing markdown to do all this homework.
+
+Go back to the [homepage](index.html)
+
+
