@@ -21,7 +21,7 @@ names(rest_inspec)
 ## Japanese restaurants, filter
 ```{r}
 
-jp_critical <- rest_inspec |>
+jp_critical = rest_inspec |>
   mutate(
     inspection_date = ymd(inspection_date),
     score = suppressWarnings(as.numeric(score)),
@@ -45,5 +45,22 @@ jp_critical <- rest_inspec |>
     !is.na(critical_flag),
     critical_flag == "Y"   
   )
+```
+
+
+```{r}
+# 1) per month x borough: number of critical cases
+jp_monthly = jp_critical |>
+  count(month, boro, name = "n_critical")
+
+# 2) season x borough: number of critical cases
+jp_seasonal = jp_critical |>
+  count(season, boro, name = "n_critical")
+
+# 3) ZIP codes: number of critical cases (top 15）
+jp_zip = jp_critical |>
+  count(zipcode, name = "n_critical") |>
+  arrange(desc(n_critical)) |>
+  slice_head(n = 15)
 ```
 
