@@ -66,6 +66,31 @@ jp_zip = jp_critical |>
 
 Column {data-width=650}
 -----------------------------------------------------------------------
+### line_monthly
+```{r}
+line_month <- plot_ly(
+data = jp_monthly,
+x = ~month,
+y = ~n_critical,
+color = ~boro,
+type = "scatter",
+mode = "lines+markers",
+hoverinfo = "text",
+text = ~paste0(
+"Borough: ", boro,
+"<br>Month: ", month,
+"<br>Critical violations: ", n_critical
+)
+) |>
+layout(
+xaxis = list(title = "Inspection month"),
+yaxis = list(title = "Number of critical violations"),
+legend = list(title = list(text = "Borough"))
+)
+
+line_month
+
+```
 
 ### Chart A: boxplot
 ```{r}
@@ -91,3 +116,37 @@ box_boro <- jp_critical |>
 
 box_boro
 ```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B: Scatter plot
+
+```{r}
+scatter_time <- jp_critical |>
+  plot_ly(
+    x = ~inspection_date,
+    y = ~score,
+    type = "scatter",
+    mode = "markers",
+    color = ~boro,
+    alpha = 0.5,
+    hoverinfo = "text",
+    text = ~paste0(
+      "Date: ", inspection_date,
+      "<br>Score: ", score,
+      "<br>Borough: ", boro,
+      "<br>ZIP: ", zipcode
+    )
+  ) |>
+  layout(
+    xaxis = list(title = "Inspection date"),
+    yaxis = list(title = "Inspection score (higher = worse)"),
+    legend = list(title = list(text = "Borough")),
+    title = "Critical violations over time (Japanese restaurants)"
+  )
+
+scatter_time
+```
+
