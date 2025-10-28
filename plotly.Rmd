@@ -12,6 +12,14 @@ library(plotly)
 library(p8105.datasets)
 ```
 
+Checked variable names
+```{r}
+data(rest_inspec)
+names(rest_inspec)
+head(rest_inspec$cuisine_description)
+```
+
+
 
 Column {data-width=650}
 -----------------------------------------------------------------------

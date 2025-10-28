@@ -352,6 +352,20 @@ div.tocify {
 </div>
 
 
+<p>Checked variable names</p>
+<pre class="r"><code>data(rest_inspec)
+names(rest_inspec)</code></pre>
+<pre><code>##  [1] &quot;camis&quot;                 &quot;dba&quot;                   &quot;boro&quot;                 
+##  [4] &quot;building&quot;              &quot;street&quot;                &quot;zipcode&quot;              
+##  [7] &quot;phone&quot;                 &quot;cuisine_description&quot;   &quot;inspection_date&quot;      
+## [10] &quot;action&quot;                &quot;violation_code&quot;        &quot;violation_description&quot;
+## [13] &quot;critical_flag&quot;         &quot;score&quot;                 &quot;record_date&quot;          
+## [16] &quot;inspection_type&quot;       &quot;latitude&quot;              &quot;longitude&quot;            
+## [19] &quot;community_board&quot;       &quot;council_district&quot;      &quot;census_tract&quot;         
+## [22] &quot;bin&quot;                   &quot;bbl&quot;                   &quot;nta&quot;                  
+## [25] &quot;grade&quot;                 &quot;grade_date&quot;</code></pre>
+<pre class="r"><code>head(rest_inspec$cuisine_description)</code></pre>
+<pre><code>## [1] &quot;American&quot; &quot;American&quot; &quot;American&quot; &quot;French&quot;   &quot;American&quot; &quot;French&quot;</code></pre>
 <div id="column" class="section level2" data-width="650">
 <h2>Column</h2>
 <div id="chart-a" class="section level3">
