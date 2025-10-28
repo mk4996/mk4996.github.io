@@ -352,7 +352,8 @@ div.tocify {
 </div>
 
 
-<p>Checked variable names</p>
+<div id="checked-variable-names" class="section level2">
+<h2>Checked variable names</h2>
 <pre class="r"><code>data(rest_inspec)
 names(rest_inspec)</code></pre>
 <pre><code>##  [1] &quot;camis&quot;                 &quot;dba&quot;                   &quot;boro&quot;                 
@@ -364,22 +365,33 @@ names(rest_inspec)</code></pre>
 ## [19] &quot;community_board&quot;       &quot;council_district&quot;      &quot;census_tract&quot;         
 ## [22] &quot;bin&quot;                   &quot;bbl&quot;                   &quot;nta&quot;                  
 ## [25] &quot;grade&quot;                 &quot;grade_date&quot;</code></pre>
-<pre class="r"><code>head(rest_inspec$cuisine_description)</code></pre>
-<pre><code>## [1] &quot;American&quot; &quot;American&quot; &quot;American&quot; &quot;French&quot;   &quot;American&quot; &quot;French&quot;</code></pre>
-<div id="column" class="section level2" data-width="650">
-<h2>Column</h2>
-<div id="chart-a" class="section level3">
-<h3>Chart A</h3>
 </div>
-</div>
-<div id="column-1" class="section level2" data-width="350">
-<h2>Column</h2>
-<div id="chart-b" class="section level3">
-<h3>Chart B</h3>
-</div>
-<div id="chart-c" class="section level3">
-<h3>Chart C</h3>
-</div>
+<div id="japanese-restaurants-filter" class="section level2">
+<h2>Japanese restaurants, filter</h2>
+<pre class="r"><code>jp_critical &lt;- rest_inspec |&gt;
+  mutate(
+    inspection_date = ymd(inspection_date),
+    score = suppressWarnings(as.numeric(score)),
+    month = floor_date(inspection_date, &quot;month&quot;),
+    season = case_when(
+      month(inspection_date) %in% c(12, 1, 2) ~ &quot;Winter&quot;,
+      month(inspection_date) %in% c(3, 4, 5) ~ &quot;Spring&quot;,
+      month(inspection_date) %in% c(6, 7, 8) ~ &quot;Summer&quot;,
+      month(inspection_date) %in% c(9, 10, 11) ~ &quot;Fall&quot;,
+      TRUE ~ NA_character_
+    )
+  ) |&gt;
+  filter(
+    cuisine_description == &quot;Japanese&quot;,
+    !is.na(inspection_date),
+    !is.na(score),
+    !is.na(boro),
+    boro != &quot;Missing&quot;,
+    !is.na(zipcode),
+    !is.na(season),
+    !is.na(critical_flag),
+    critical_flag == &quot;Y&quot;   
+  )</code></pre>
 </div>
 
 

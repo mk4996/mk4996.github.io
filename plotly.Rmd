@@ -12,35 +12,38 @@ library(plotly)
 library(p8105.datasets)
 ```
 
-Checked variable names
+## Checked variable names
 ```{r}
 data(rest_inspec)
 names(rest_inspec)
-head(rest_inspec$cuisine_description)
 ```
 
-
-
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
-
+## Japanese restaurants, filter
 ```{r}
 
+jp_critical <- rest_inspec |>
+  mutate(
+    inspection_date = ymd(inspection_date),
+    score = suppressWarnings(as.numeric(score)),
+    month = floor_date(inspection_date, "month"),
+    season = case_when(
+      month(inspection_date) %in% c(12, 1, 2) ~ "Winter",
+      month(inspection_date) %in% c(3, 4, 5) ~ "Spring",
+      month(inspection_date) %in% c(6, 7, 8) ~ "Summer",
+      month(inspection_date) %in% c(9, 10, 11) ~ "Fall",
+      TRUE ~ NA_character_
+    )
+  ) |>
+  filter(
+    cuisine_description == "Japanese",
+    !is.na(inspection_date),
+    !is.na(score),
+    !is.na(boro),
+    boro != "Missing",
+    !is.na(zipcode),
+    !is.na(season),
+    !is.na(critical_flag),
+    critical_flag == "Y"   
+  )
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
