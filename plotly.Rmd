@@ -92,6 +92,33 @@ line_month
 
 ```
 
+### bar chart_season
+
+```{r}
+bar_season <- plot_ly(
+data = jp_seasonal,
+x = ~season,
+y = ~n_critical,
+color = ~boro,
+type = "bar",
+hoverinfo = "text",
+text = ~paste0(
+"Season: ", season,
+"<br>Borough: ", boro,
+"<br>Critical violations: ", n_critical
+)
+) |>
+layout(
+barmode = "group",
+xaxis = list(title = "Season"),
+yaxis = list(title = "Number of critical violations"),
+legend = list(title = list(text = "Borough"))
+)
+
+bar_season
+```
+
+
 ### Chart A: boxplot
 ```{r}
 box_boro <- jp_critical |>
