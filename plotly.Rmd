@@ -64,3 +64,30 @@ jp_zip = jp_critical |>
   slice_head(n = 15)
 ```
 
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A: boxplot
+```{r}
+box_boro <- jp_critical |>
+  plot_ly(
+    x = ~boro,
+    y = ~score,
+    color = ~boro,
+    type = "box",
+    hoverinfo = "text",
+    text = ~paste0(
+      "Borough: ", boro,
+      "<br>Score: ", score,
+      "<br>Date: ", inspection_date
+    )
+  ) |>
+  layout(
+    xaxis = list(title = "Borough"),
+    yaxis = list(title = "Inspection score (higher = worse)"),
+    showlegend = FALSE,
+    title = "Score distribution by borough (critical violations only)"
+  )
+
+box_boro
+```
