@@ -1,5 +1,5 @@
 ---
-title: "NYC Restaurant Inspection Dashboard"
+title: "Temporal and Geographic Patterns of Critical Violations in Japanese Restaurants (NYC)"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -12,15 +12,16 @@ library(plotly)
 library(p8105.datasets)
 ```
 
+
+```{r include=FALSE}
 ## Checked variable names
-```{r}
 data(rest_inspec)
 names(rest_inspec)
 ```
 
-## Japanese restaurants, filter
-```{r}
 
+```{r include=FALSE}
+## Japanese restaurants, filter
 jp_critical = rest_inspec |>
   mutate(
     inspection_date = ymd(inspection_date),
@@ -48,7 +49,7 @@ jp_critical = rest_inspec |>
 ```
 
 
-```{r}
+```{r include=FALSE}
 # 1) per month x borough: number of critical cases
 jp_monthly = jp_critical |>
   count(month, boro, name = "n_critical")
@@ -57,18 +58,13 @@ jp_monthly = jp_critical |>
 jp_seasonal = jp_critical |>
   count(season, boro, name = "n_critical")
 
-# 3) ZIP codes: number of critical cases (top 15）
-jp_zip = jp_critical |>
-  count(zipcode, name = "n_critical") |>
-  arrange(desc(n_critical)) |>
-  slice_head(n = 15)
 ```
 
-Column {data-width=650}
+Trends Over Time {.tabset}
 -----------------------------------------------------------------------
-### line_monthly
+### Chart A: Monthly Counts
 ```{r}
-line_month <- plot_ly(
+line_month = plot_ly(
 data = jp_monthly,
 x = ~month,
 y = ~n_critical,
@@ -92,10 +88,11 @@ line_month
 
 ```
 
-### bar chart_season
+
+### Chart B: Seasonal Trends
 
 ```{r}
-bar_season <- plot_ly(
+bar_season = plot_ly(
 data = jp_seasonal,
 x = ~season,
 y = ~n_critical,
@@ -118,10 +115,12 @@ legend = list(title = list(text = "Borough"))
 bar_season
 ```
 
+Location Patterns {.tabset}
+-----------------------------------------------------------------------
+### Chart C: Score Distribution by Borough
 
-### Chart A: boxplot
 ```{r}
-box_boro <- jp_critical |>
+box_boro = jp_critical |>
   plot_ly(
     x = ~boro,
     y = ~score,
@@ -145,35 +144,26 @@ box_boro
 ```
 
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B: Scatter plot
+### Chart D: Location of Japanese Restaurants in NYC
 
 ```{r}
-scatter_time <- jp_critical |>
-  plot_ly(
-    x = ~inspection_date,
-    y = ~score,
-    type = "scatter",
-    mode = "markers",
-    color = ~boro,
-    alpha = 0.5,
-    hoverinfo = "text",
-    text = ~paste0(
-      "Date: ", inspection_date,
-      "<br>Score: ", score,
-      "<br>Borough: ", boro,
-      "<br>ZIP: ", zipcode
-    )
-  ) |>
-  layout(
-    xaxis = list(title = "Inspection date"),
-    yaxis = list(title = "Inspection score (higher = worse)"),
-    legend = list(title = list(text = "Borough")),
-    title = "Critical violations over time (Japanese restaurants)"
-  )
+scatter_geo =
+  jp_critical |>
+  ggplot(aes(x = longitude, y = latitude, color = score,  text = paste(
+      "Name:", dba,
+      "<br>Borough:", boro,
+      "<br>Score:", score
+    ))) +
+  geom_point(alpha = 0.5, size = 1.5) +
+  scale_color_viridis_c(option = "plasma", direction = -1) +
+  labs(
+    x = "Longitude",
+    y = "Latitude",
+    color = "Score",
+    title = "Location of Japanese restaurants with critical violations in NYC"
+  ) +
+  theme_minimal()
 
-scatter_time
+ggplotly(scatter_geo, tooltip = "text")
 ```
 
