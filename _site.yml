@@ -8,7 +8,7 @@ navbar:
     - text: "Japanese restaurant"
       href: plotly.html
     - icon: fa-linkedin fa-lg
-      href: www.linkedin.com/in/miho-kawanami
+      href: https://www.linkedin.com/in/miho-kawanami
     - icon: fa-envelope fa-lg
       href: mailto:mk1168@gmail.com
     - icon: fa-github fa-lg
