@@ -65,19 +65,19 @@ Trends Over Time {.tabset}
 ### Chart A: Monthly Counts
 ```{r}
 line_month = plot_ly(
-data = jp_monthly,
-x = ~month,
-y = ~n_critical,
-color = ~boro,
-type = "scatter",
-mode = "lines+markers",
-hoverinfo = "text",
-text = ~paste0(
-"Borough: ", boro,
-"<br>Month: ", month,
-"<br>Critical violations: ", n_critical
-)
-) |>
+  data = jp_monthly,
+  x = ~month,
+  y = ~n_critical,
+  color = ~boro,
+  type = "scatter",
+  mode = "lines+markers",
+  hoverinfo = "text",
+  text = ~paste0(
+  "Borough: ", boro,
+  "<br>Month: ", month,
+  "<br>Critical violations: ", n_critical
+  )
+  ) |>
 layout(
 xaxis = list(title = "Inspection month"),
 yaxis = list(title = "Number of critical violations"),

@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "Resume"
 output: 
   html_document:
     toc: true
@@ -14,17 +14,18 @@ output:
 - BS / MS in Nursing, St. Luke's International University, Tokyo, Japan
 
 
-## Interests
+## Publication & Presentation
 
-- Mental health prevention and early intervention
+- Yang, Y., Whalen, A. M., Barreto, G. A., Kawanami, M., Regan, S. D., Aldstadt, J., Chaix, B., & Duncan, D. T. (in submission). Global positioning system–derived individual mobility variables for spatial epidemiologic studies. Health & Place.
 
-- Workplace stress, burnout, and resilience
+- Kawanami, M. (2025, November). Playful parenting for caregiver well-being: Understanding the evidence and implications for program design. Poster presented at the Mailman School of Public Health, Columbia University, New
+York, NY.
 
-- Spatial epidemiology and environmental context of mental health
+- Kawanami, M., Ota, E., Kobayashi, M., & Ma, P. (2022, November). Nurse-led lifestyle interventions for metabolic syndrome, overweight, or obesity: A systematic review. Poster presented at the American Public Health Association Annual Meeting, Boston, MA.
+
+- Kawanami, M. & Okubo, N (2021). A Review of the Literature on the Changes in Behavior and Self-awareness Among Preschool Children After Learning About Their Body. Bulletin of St. Luke’s International University, 7, 57-65.
+https://doi.org/10.34414/00016399
 
 
-## Contact
-Email: mihok1168@gmail.com  
-GitHub: https://github.com/mk4996/mk4996.github.io
 
 Go back to the [homepage](index.html)

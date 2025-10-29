@@ -13,15 +13,16 @@ Hi, I'm **Miho Kawanami**.
 I'm currently an MPH student in Epidemiology at Columbia University.
 My interests include:
 
-- mental health prevention
+- Mental health prevention
 
 - Psychiatric Epidemiology
 
-- health disparity and mental health
+- Spatial epidemiology and environmental context of mental health
 
 You can find more about me on the [About](about.html) page.
 
 
 
+![](IMG_7101.jpg)
 
 
