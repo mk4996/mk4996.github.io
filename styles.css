@@ -1,0 +1,15 @@
+body {
+  background-color: #FAF6EE;
+  color: #443A32;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+h1, h2, h3 {
+  color: #6F5542;
+}
+
+a {
+  color: #9A6F50;
+}
