@@ -4,26 +4,20 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: null
+    theme: cosmo
     css: styles.css
 ---
 # Welcome
 
 Hi, I'm **Miho Kawanami**.
+I am a public health researcher with a background in nursing and epidemiology. 
+My research interests center on understanding how social and structural conditions shape mental health and contribute to persistent health disparities.
 
-I'm currently an MPH student in Epidemiology at Columbia University.
-My interests include:
-
-- Mental health prevention
-
-- Psychiatric Epidemiology
-
-- Spatial epidemiology and environmental context of mental health
+I am particularly interested in identifying modifiable mechanisms through which social disadvantage—including economic hardship, discrimination, trauma, and neighborhood conditions—affects mental health across the life course. Ultimately, I hope to translate epidemiologic evidence into effective and scalable interventions that can disrupt cycles of disadvantage and improve population mental health.
 
 You can find more about me on the [About](about.html) page.
 
+![](MIHO-2.PNG){width=300px}
 
-
-![](IMG_7101.jpg)
 
 

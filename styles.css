@@ -3,13 +3,39 @@ body {
   color: #443A32;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 h1, h2, h3 {
   color: #6F5542;
 }
 
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 a {
   color: #9A6F50;
+}
+
+/* Space between bullet points */
+li {
+  margin-bottom: 14px;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: #E6D5BD !important;
+  border-color: #E6D5BD !important;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: #443A32 !important;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #8A6548 !important;
 }

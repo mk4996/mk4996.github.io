@@ -4,7 +4,8 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: cosmo
+    css: styles.css
 ---
 
 ## Education
@@ -14,6 +15,7 @@ output:
 - BS / MS in Nursing, St. Luke's International University, Tokyo, Japan
 
 
+
 ## Publication 
 
 - Kawanami, M., Furuya, A., Whalen, A. M., Callander, D., Radix, A., Merriman, J., Trinh-Shevrin, C., Sahnah Lim, S., & Duncan, D. T. (in submission). Cross-Sectional and Longitudinal Associations Between Food Insecurity and Psychological Distress Among Transgender Women of Color: A TURNNT Cohort Study. Transgender Health.
@@ -21,6 +23,7 @@ output:
 - Yang, Y., Whalen, A. M., Barreto, G. A., Kawanami, M., Regan, S. D., Aldstadt, J., Chaix, B., & Duncan, D. T. (in submission). Global positioning system–derived individual mobility variables for spatial epidemiologic studies. Health & Place.
 
 - Kawanami, M. & Okubo, N (2021). A Review of the Literature on the Changes in Behavior and Self-awareness Among Preschool Children After Learning About Their Body. Bulletin of St. Luke’s International University, 7, 57-65. https://doi.org/10.34414/00016399
+
 
 
 ## Presentation
